@@ -1,0 +1,53 @@
+{% extends "base.html"%}
+{% block title %} Analyze Your Expenses {% endblock %}
+
+{% block content %}
+<form action="/analysis" METHOD="POST">
+<div class="container">
+  <h1>Learn About Your Spendings</h1>
+
+<div class="card" style="width: 18rem;">
+  <img src="{{url_for('static', filename='images/save_money_515828.jpg')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Here you can learn more about how you have been spending your money.</p>
+  </div>
+</div>
+
+</div>
+<div class="container">
+  <br/><br/><br/>
+  <h2>Info about your expenses</h2>
+<div class="container">
+  This is the total amount spent: ${{db}}.
+</div>
+
+<form action="/analysis" METHOD="POST">
+<div class="container">
+  <br>
+  <label for="">Enter Month</label>
+  <input type="number" name="month">
+  <input type="submit" placeholder="Add Month" class="btn btn-secondary">
+<br>
+
+{% if request.method == 'POST'%}
+  <div class="container">
+    Month: {{x}}
+  </div>
+  <div class="container">
+    You Have Spent: ${{db2}}
+  </div>
+
+{% endif %}
+
+</div>
+</form>
+
+
+  <br/><br/><br/>
+
+</div>
+{% endblock %}
+
+
+
+:

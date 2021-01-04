@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Update Record{% endblock %}
+{% block content %}
+    <div class="container">
+      <h1>Update Record...</h1>
+      <br/>
+      <form action="/update/{{record_to_update.id}}" METHOD="POST">
+        <input type="number" placeholder="Amount" name="amount" value="{{record_to_update.amount}}">
+        <br/>
+        <input type="date" placeholder="Date" name="date" value="{{record_to_update.date}}">
+        <br/>
+        <input type="text" placeholder="Reason" name="reason" value="{{record_to_update.reason}}">
+        
+        <input type="submit" placeholder="Add Record" class="btn btn-secondary">
+      </form>
+      <br/><br/>
+
+
+
+    </div>
+{% endblock %}

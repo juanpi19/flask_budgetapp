@@ -1,0 +1,69 @@
+{% extends 'base.html'%}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Add Your Record</h1>
+
+  {% if error_statement %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{error_statement}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
+
+  <br/>
+  <form action="/records" METHOD="POST">
+    <div class="form">
+        <input type="number" placeholder="Amount" name="amount">
+    </div>
+
+    <div class="form">
+      <input type="date" placeholder="Date" name="date"
+         min="2000-01-01" max="2050-12-31">
+    </div>
+
+    <div class="form">
+      <input type="text" placeholder="Reason" name="reason">
+    </div>
+
+
+    <input type="submit" placeholder="Add Name" class="btn btn-secondary">
+  </form>
+  <br/><br>
+
+  <div class="data-dis">
+    <h2>Record</h2>
+    <p>For a more neatly displayed records, go to the Data link to view records as a spreadsheet</p>
+  </div>
+
+  <br/><br><br>
+
+
+  {% for i in expense %}
+
+<div class="record-list">
+  <li>
+    <font size = "-0.5"> {{i.amount}} - {{i.date}} - {{i.reason}}</font> <a href="/update/{{i.id}}" class="btn btn-outline-secondary btn-sm">Update</a>
+
+    <a href="/delete/{{ i.id }}" class="btn btn-outline-danger btn-sm">Delete</a>
+
+  </li>
+
+</div>
+
+
+
+
+
+
+  {% endfor %}
+
+
+
+
+
+</div>
+
+{% endblock %}

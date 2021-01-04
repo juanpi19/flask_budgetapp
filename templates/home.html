@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% block title %} Track Your Money Intelligently   {% endblock %}
+
+{% block content %}
+
+<form action="/" method="POST">
+<div class="container">
+  <h1>Expense Tracker</h1>
+  <br/>
+  <p>This is a personal project created by me, Juan Herrera.
+     This is made for everyone to have a better control of their expenses,
+     you will add the date, amount and reason of the expenses
+     and that will be added into your database.
+     That will allow you to see how much you have spent
+     and how you have spent it.</p>
+</div>
+
+    <br>
+  <div class="block">
+   <h3>Your Process</h3>
+   <li>Add Amount</li>
+   <li>Add Date</li>
+   <li>Add Reason</li>
+  <div>
+
+  <br><br>
+
+  <div class="block">
+    <h3>Your Benefit</h3>
+    <li>We will tell you how you spend your money</li>
+    <li>We will tell you when you spend more</li>
+    <li>We will give you tips on how to spend it better</li>
+  </div>
+
+
+  <br><br>
+  <div class="card" style="width: 18rem;">
+    <img src="{{url_for('static', filename='images/background-person-saving-money_23-2147626644.jpg')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">LET'S SAVE MONEY FOR THE FUTURE.</p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}

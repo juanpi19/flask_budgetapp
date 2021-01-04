@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block title %}{{error_statement}}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1> Error... </h1>
+
+  {{error_statement}}
+
+  <br/>
+  <form action="/records" METHOD="POST">
+    <input type="number" placeholder="Amount" name="amount">
+    <br/><br/>
+    <input type="date" placeholder="Date" name="date"
+       min="2000-01-01" max="2050-12-31">
+    <br/><br/>
+    <input type="text" placeholder="Reason" name="reason">
+    <br/><br/>
+
+    <input type="submit" placeholder="Add Name" class="btn btn-secondary">
+  </form>
+  <br/><br/>
+  {% for i in expense %}
+    <h4>
+      {{i.amount}} | {{i.date}} | {{i.reason}}
+    </h4>
+
+
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
